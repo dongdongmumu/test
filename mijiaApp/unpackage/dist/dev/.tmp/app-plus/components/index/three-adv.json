@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "heavy-line": "/components/common/heavyLine"
+  },
+  "component": true
+}
