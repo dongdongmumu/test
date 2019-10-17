@@ -10,7 +10,7 @@
     "buttons": [
       {
         "fontSrc": "/static/font/iconfont.ttf",
-        "text": "",
+        "text": "",
         "float": "right",
         "color": "#cacaca",
         "colorPressed": "#FD6801",
@@ -18,5 +18,7 @@
       }
     ]
   },
-  "usingComponents": {}
+  "usingComponents": {
+    "class-item": "/components/class/class-item"
+  }
 }
