@@ -1,6 +1,6 @@
 <template>
 	<view>
-		<heavyLine></heavyLine>
+		<divider></divider>
 		<view  class="d-flex flex-row flex-nowrap j-sb" style="height:530rpx;">
 			<view class="" @click="even(resdata[0])">
 				<image :src="resdata.big.src" lazy-load mode="" style="width: 373rpx;height:530rpx;"></image>
@@ -11,12 +11,12 @@
 			</view>
 		</view>
 		<!-- 粗实线 -->
-		<heavyLine></heavyLine>
+		<divider></divider>
 	</view>
 </template>
 
 <script>
-	import heavyLine from "@/components/common/heavyLine.vue"
+	import divider from "@/components/common/divider.vue"
 	export default{
 		props:{
 			resdata:Object
@@ -27,7 +27,7 @@
 			}
 		},
 		components:{
-			heavyLine
+			divider
 		}
 	}
 </script>

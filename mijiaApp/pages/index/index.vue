@@ -1,6 +1,6 @@
 <template>
 	<view class="uni-tab-bar">
-		<scroll-view id="tab-bar" class="uni-swiper-tab" scroll-x :scroll-left="scrollLeft">
+		<scroll-view id="tab-bar" class="uni-swiper-tab" scroll-x:true scroll-left="scrollLeft">
 			<view v-for="(tab,index) in tabBars" :key="tab.id" class="swiper-tab-list" :class="tabIndex==index ? 'active' : ''"
 			 :id="tab.id" :data-current="index" @click="tapTab(index)">
 				<view class="tabitems">{{tab.name}}</view>
@@ -10,13 +10,9 @@
 		<swiper :current="tabIndex" class="swiper-box" :duration="300" @change="changeTab">
 			<swiper-item v-for="(tab,index1) in newsitems" :key="index1">
 				<scroll-view class="list" scroll-y @scrolltolower="loadMore(index1)">
-					
-					
 					<!-- index模板 -->
 					<template v-if="tabBars[index1].template === 'index'">
-						
 						<block v-for="(v,i) in tab.data" :key="i">
-							
 							<template v-if="v.type === 'swiper'">
 								<!-- 轮播图组件 -->
 								<swiper-image :resdata="v.data" />
@@ -33,7 +29,7 @@
 							</template>
 							<template v-else-if="v.type === 'oneAdv'">
 								<!-- 大图广告位 -->
-								<card :headTitle="v.data.title" 
+								<card :headTitle="v.data.title" :imgheight="299"
 								:bodyCover="v.data.cover" />
 							</template>
 							<template v-else-if="v.type === 'list'">
@@ -82,6 +78,7 @@
 	</view>
 </template>
 <script>
+	import divider from "@/components/common/divider.vue"
 	import swiperImage from "@/components/index/swiper-image.vue";
 	import indexNav from "@/components/index/index-nav.vue";
 	import threeAdv from "@/components/index/three-adv.vue";
@@ -94,7 +91,14 @@
 			indexNav,
 			threeAdv,
 			card,
-			commonList
+			commonList,
+			divider
+		},
+		onNavigationBarSearchInputClicked() {
+			// console.log("111")
+			uni.navigateTo({
+				url:"../search/search"
+			});
 		},
 		data() {
 			return {
@@ -145,6 +149,7 @@
 		onLoad() {
 			this.newsitems = this.randomfn()
 		},
+		
 		methods: {
 			// 加载更多
 			loadMore(e) {

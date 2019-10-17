@@ -1,0 +1,14 @@
+
+.tabbar{
+	line-height: 100rpx; 
+	font-size: 25rpx;
+	width: 33%;
+	text-align: center;
+}
+.selectColor{
+	color:#FD6801
+}
+.commonColor{
+	color:#666666
+}
+

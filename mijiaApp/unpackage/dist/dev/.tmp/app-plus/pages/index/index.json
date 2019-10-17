@@ -1,6 +1,7 @@
 {
   "titleNView": {
     "searchInput": {
+      "disabled": true,
       "align": "left",
       "backgroundColor": "f7f7f7",
       "borderRadius": "4px",
@@ -31,6 +32,7 @@
     "index-nav": "/components/index/index-nav",
     "three-adv": "/components/index/three-adv",
     "card": "/components/common/card",
-    "common-list": "/components/common/common-list"
+    "common-list": "/components/common/common-list",
+    "divider": "/components/common/divider"
   }
 }

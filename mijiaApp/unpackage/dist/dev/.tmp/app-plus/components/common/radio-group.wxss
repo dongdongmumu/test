@@ -1,0 +1,27 @@
+
+.btnall{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-flex-wrap: wrap;
+	    -ms-flex-wrap: wrap;
+	        flex-wrap: wrap;
+}
+.btn{
+	padding: 20rpx 30rpx;
+	background-color: #f7fafa;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	margin: 20rpx;
+	font-size: 25rpx;
+	white-space: nowrap;
+}
+.btnsel{
+	background-color: #fce1d5;
+	border: 3rpx solid #FD6801;
+	color: #FD6801;
+}
+

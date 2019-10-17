@@ -1,6 +1,6 @@
 {
   "usingComponents": {
-    "heavy-line": "/components/common/heavyLine"
+    "divider": "/components/common/divider"
   },
   "component": true
 }

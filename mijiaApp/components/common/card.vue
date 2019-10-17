@@ -6,7 +6,7 @@
 			</slot>
 		</view>
 		<view>
-			<image v-if="bodyCover" :src="bodyCover"></image>
+			<image v-if="bodyCover" class="" :src="bodyCover" :style="imghet"></image>
 			<slot></slot>
 		</view>
 	</view>
@@ -20,6 +20,17 @@
 			showhead:{
 				type:Boolean,
 				default:true
+			},
+			imgheight:String
+		},
+		computed:{
+			imghet(){
+				if(!this.imgheight){
+					return 
+				}
+				let imghei = this.imgheight;
+				imghei *= 1;
+				return `height:${imghei}rpx;`
 			}
 		}
 	}

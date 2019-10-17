@@ -6,6 +6,7 @@
 				"app-plus":{
 					"titleNView":{
 						"searchInput":{
+							"disabled":true,
 							"align":"center",
 							"backgroundColor":"f7f7f7",
 							"borderRadius":"4px",
@@ -21,7 +22,6 @@
 								"color":"#cacaca",
 								"colorPressed":"#FD6801",
 								"fontSize":"22px"
-								
 							},
 							{
 								"fontSrc":"/static/font/iconfont.ttf",
@@ -37,7 +37,30 @@
 			}
 		}, {
 			"path": "pages/class/class",
-			"style": {}
+			"style" : {
+				"app-plus":{
+					"titleNView":{
+						"searchInput":{
+							"align":"center",
+							"backgroundColor":"f7f7f7",
+							"borderRadius":"4px",
+							"placeholder":"智能积木 越野自行车",
+							"placeholderColor":"#cbcbcb",
+							"align":"left"
+						},
+						"buttons":[
+							{
+								"fontSrc":"/static/font/iconfont.ttf",
+								"text":"\ue661",
+								"float":"right",
+								"color":"#cacaca",
+								"colorPressed":"#FD6801",
+								"fontSize":"22px"
+							}
+						]
+					}
+				}
+			}
 		}, {
 			"path": "pages/my/my",
 			"style": {}
@@ -45,7 +68,60 @@
 			"path": "pages/cart/cart",
 			"style": {}
 		}
-	],
+	    ,{
+            "path" : "pages/search/search",
+            "style" : {
+				"app-plus":{
+					"titleNView":{
+						"searchInput":{
+							"align":"center",
+							"backgroundColor":"f7f7f7",
+							"borderRadius":"4px",
+							"placeholder":"智能积木 越野自行车",
+							"placeholderColor":"#cbcbcb",
+							"align":"left"
+						},
+						"buttons":[
+							{
+								"text":"搜索",
+								"float":"right",
+								"color":"#cacaca",
+								"colorPressed":"#FD6801",
+								"fontSize":"16px"
+							}
+						]
+					}
+				}
+			}
+        }
+        ,{
+            "path" : "pages/searchList/searchList",
+            "style" : {
+            	"app-plus":{
+            		"titleNView":{
+            			"searchInput":{
+            				"align":"center",
+            				"backgroundColor":"f7f7f7",
+            				"borderRadius":"4px",
+            				"placeholder":"智能积木 越野自行车",
+            				"placeholderColor":"#cbcbcb",
+            				"align":"left"
+            			},
+            			"buttons":[
+            				{
+            					"text":"搜索",
+            					"float":"right",
+            					"color":"#cacaca",
+            					"colorPressed":"#FD6801",
+            					"fontSize":"16px"
+            					
+            				}
+            			]
+            		}
+            	}
+            }
+        }
+    ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "uni-app",

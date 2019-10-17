@@ -1,0 +1,41 @@
+
+.list{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: row;
+	    -ms-flex-direction: row;
+	        flex-direction: row;
+	-webkit-flex-wrap: nowrap;
+	    -ms-flex-wrap: nowrap;
+	        flex-wrap: nowrap;
+	height: 250rpx;
+	margin: 20rpx;
+}
+.listLeft{
+	height: 250rpx;
+	width: 280rpx;
+	text-align: left;
+}
+.listImg{
+	width: 250rpx;
+	height: 250rpx;
+}
+.listRight{
+	width: 430rpx;
+	height: 250rpx;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+	padding-top: 20rpx;
+}
+

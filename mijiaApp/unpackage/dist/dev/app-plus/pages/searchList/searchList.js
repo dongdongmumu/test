@@ -1,0 +1,2 @@
+setCssToHead([".",[1],"tabbar{ line-height: ",[0,100],"; font-size: ",[0,25],"; width: 33%; text-align: center; }\n.",[1],"selectColor{ color:#FD6801 }\n.",[1],"commonColor{ color:#666666 }\n",],undefined,{path:"./pages/searchList/searchList.wxss"})();
+document.dispatchEvent(new CustomEvent("generateFuncReady", { detail: { generateFunc: $gwx('./pages/searchList/searchList.wxml') } }));

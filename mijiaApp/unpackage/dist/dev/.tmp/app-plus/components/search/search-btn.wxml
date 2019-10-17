@@ -1,0 +1,1 @@
+<view class="btn" style="{{(getStyle)}}">{{''+item.name+''}}</view>

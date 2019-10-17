@@ -1,3 +1,22 @@
 {
+  "titleNView": {
+    "searchInput": {
+      "align": "left",
+      "backgroundColor": "f7f7f7",
+      "borderRadius": "4px",
+      "placeholder": "智能积木 越野自行车",
+      "placeholderColor": "#cbcbcb"
+    },
+    "buttons": [
+      {
+        "fontSrc": "/static/font/iconfont.ttf",
+        "text": "",
+        "float": "right",
+        "color": "#cacaca",
+        "colorPressed": "#FD6801",
+        "fontSize": "22px"
+      }
+    ]
+  },
   "usingComponents": {}
 }

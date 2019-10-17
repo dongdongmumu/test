@@ -1,0 +1,26 @@
+{
+  "titleNView": {
+    "searchInput": {
+      "align": "left",
+      "backgroundColor": "f7f7f7",
+      "borderRadius": "4px",
+      "placeholder": "智能积木 越野自行车",
+      "placeholderColor": "#cbcbcb"
+    },
+    "buttons": [
+      {
+        "text": "搜索",
+        "float": "right",
+        "color": "#cacaca",
+        "colorPressed": "#FD6801",
+        "fontSize": "16px"
+      }
+    ]
+  },
+  "usingComponents": {
+    "search-item": "/components/search-list/search-item",
+    "uni-drawer": "/components/common/uni-drawer",
+    "card": "/components/common/card",
+    "radio-group": "/components/common/radio-group"
+  }
+}
