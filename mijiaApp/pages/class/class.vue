@@ -1,21 +1,18 @@
 <template>
-	<view class="container">
-		<view class="page-body">
+	<view class="">
+		<view class="nav">
 			<scroll-view class="nav-left" scroll-y :style="'height:'+height+'px'" >
-				<view class="nav-left-item" @click="categoryClickMain(item,index)" :key="index" :class="index==categoryActive?'active':''"
-				    v-for="(item,index) in categoryList">
+				<view  :class="index==categoryActive?'active':''" v-for="(item,index) in categoryList" :key="index" class="nav-left-item"
+				@click="categoryClickMain(item,index)"	>
 					{{item.name}}
 				</view>
 			</scroll-view>
-			<scroll-view class="nav-right" scroll-y :scroll-top="scrollTop" @scroll="scroll" 
-				scroll-into-view="selectId" :style="'height:'+height+'px'" scroll-with-animation>
-				<!-- 在这里使用循环左侧分类的方式来代表右侧的数据 -->
-				
-					<view :id="index===0?'first':''" class="nav-right-item" v-for="(item,index) in subCategoryList" :key="index">
-						<image :src="item.LOGO" lazy-load/>
-						<view>{{item.name}}</view>
+			<scroll-view class="nav-right" scroll-y :style="'height:'+height+'px'" scroll-top="200">
+					<view class="" style="display: flex;flex-wrap: wrap;">
+						<view v-for="(item,index) in categoryList[categoryActive].subCategoryList" :key="index" class="nav-right-item" @click="shopItem(item)">
+							<class-item :resdata="item"></class-item>
+						</view>
 					</view>
-			
 			</scroll-view>
 		</view>
 	</view>
@@ -33,20 +30,20 @@
 				selectId:"",
 				categoryList: [],
 				subCategoryList: [],	//每个分类名都对应着分类列表项
-				height: 0,
-				categoryActive: 0,
-				scrollTop: 0,
+				height: 0,				//屏幕高度
+				categoryActive: 0,		//当前选中的分类
+				scrollTop:0,			
 				scrollHeight: 0,
 				classData:[
-					{ src:"/static/images/demo/cate_01.png",text:"产品说明"},
-					{ src:"/static/images/demo/cate_02.png",text:"产品说明" },
-					{ src:"/static/images/demo/cate_03.png",text:"产品说明" },
-					{ src:"/static/images/demo/cate_04.png",text:"产品说明" },
-					{ src:"/static/images/demo/cate_05.png",text:"产品说明" },
-					{ src:"/static/images/demo/cate_06.png",text:"产品说明" },
-					{ src:"/static/images/demo/cate_07.png",text:"产品说明" },
-					{ src:"/static/images/demo/cate_08.png",text:"产品说明" },
-					{ src:"/static/images/demo/cate_09.png",text:"产品说明" },
+					{ src:"/static/images/demo/cate_01.png" },
+					{ src:"/static/images/demo/cate_02.png" },
+					{ src:"/static/images/demo/cate_03.png" },
+					{ src:"/static/images/demo/cate_04.png" },
+					{ src:"/static/images/demo/cate_05.png" },
+					{ src:"/static/images/demo/cate_06.png" },
+					{ src:"/static/images/demo/cate_07.png" },
+					{ src:"/static/images/demo/cate_08.png" },
+					{ src:"/static/images/demo/cate_09.png" },
 				]
 			}
 		},
@@ -54,21 +51,21 @@
 			scroll(e) {
 				this.scrollHeight = e.detail.scrollHeight;
 			},
-			categoryClickMain(categroy, index) {
+			categoryClickMain(value, index) {
 				this.categoryActive = index;
-				this.subCategoryList = categroy.subCategoryList;
-				this.scrollTop = -this.scrollHeight * index;
-				this.selectId = categroy.id;
+			},
+			shopItem(item){
+				console.log(item.name)
 			},
 			getCategory() {
 				let index;
-				for (var i = 1; i < 21; i++) {
+				for (var i = 1; i < 16; i++) {
 					var subList = [];
-					for (var j = 1; j < 31; j++) {
+					for (var j = 1; j < 21; j++) {
 						index = Math.floor(Math.random()*9);
 						subList.push({
-							"name": "分类" + i + ":商品" + j,
-							"LOGO": this.classData[index].src
+							"name": i + ":商品" + j,
+							"src": this.classData[index].src
 						})
 					}
 					this.categoryList.push({
@@ -82,7 +79,7 @@
 		},
 		onLoad: function () {
 			this.getCategory();
-			this.height = uni.getSystemInfoSync().windowHeight;
+			this.height = uni.getSystemInfoSync().windowHeight;	//获取屏幕高度
 		}
 	}
 </script>
@@ -96,7 +93,7 @@
 		width: 100%;
 	}
 	.nav-left {
-		width:165rpx;
+		width:20%;
 	}
 	.nav-left-item {
 		height: 100upx;
@@ -108,7 +105,12 @@
 		justify-content: center;
 	}
 	.nav-right {
-		width: 70%;
+		width: 80%;
+	}
+	.rightNav{
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction: column;
 	}
 	.nav-right-item {
 		width: 28%;

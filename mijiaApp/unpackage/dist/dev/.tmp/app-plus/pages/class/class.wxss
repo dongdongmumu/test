@@ -13,7 +13,7 @@
 	width: 100%;
 }
 .nav-left {
-	width:165rpx;
+	width:20%;
 }
 .nav-left-item {
 	height: 100rpx;
@@ -34,7 +34,21 @@
 	        justify-content: center;
 }
 .nav-right {
-	width: 70%;
+	width: 80%;
+}
+.rightNav{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-flex-wrap: wrap;
+	    -ms-flex-wrap: wrap;
+	        flex-wrap: wrap;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
 }
 .nav-right-item {
 	width: 28%;

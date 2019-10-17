@@ -4,7 +4,7 @@
 			<image :src='resdata.src' class="imgStyle" mode=""></image>
 		</view>
 		<view class="textStyle">
-			{{resdata.text}}
+			{{resdata.name}}
 		</view>
 	</view>
 </template>

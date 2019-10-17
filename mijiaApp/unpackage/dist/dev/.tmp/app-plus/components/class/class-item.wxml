@@ -1,1 +1,1 @@
-<view class="d-flex flex-column " style="height:200rpx;margin:20rpx;"><view><image class="imgStyle" src="{{resdata.src}}" mode></image></view><view class="textStyle">{{''+resdata.text+''}}</view></view>
+<view class="d-flex flex-column " style="height:200rpx;margin:20rpx;"><view><image class="imgStyle" src="{{resdata.src}}" mode></image></view><view class="textStyle">{{''+resdata.name+''}}</view></view>
