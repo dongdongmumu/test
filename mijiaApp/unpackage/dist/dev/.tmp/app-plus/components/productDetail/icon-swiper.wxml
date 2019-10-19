@@ -1,0 +1,1 @@
+<view class="d-flex flex-column j-center text-center" style="width:140rpx;"><view><view class="{{['iconfont ',iconff]}}"></view></view><text style="font-size:25rpx;">{{resdata.name}}</text><text style="width:150rpx;color:#666666;font-size:19rpx;">{{resdata.text}}</text></view>

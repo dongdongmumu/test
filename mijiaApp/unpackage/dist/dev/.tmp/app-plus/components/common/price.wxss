@@ -1,0 +1,10 @@
+
+.fs{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	color: #FD6801;
+	font-style: bold;
+}
+

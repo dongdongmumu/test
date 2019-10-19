@@ -1,7 +1,7 @@
 <template>
 	<view class="uni-tab-bar">
-		<scroll-view id="tab-bar" class="uni-swiper-tab" scroll-x:true scroll-left="scrollLeft">
-			<view v-for="(tab,index) in tabBars" :key="tab.id" class="swiper-tab-list" :class="tabIndex==index ? 'active' : ''"
+		<scroll-view id="tab-bar" class="uni-swiper-tab" scroll-x scroll-left="scrollLeft">
+			<view v-for="(tab,index) in tabBars" :key="tab.id" class="swiper-tab-list" :class="tabIndex==index ? 'active' : ''" 
 			 :id="tab.id" :data-current="index" @click="tapTab(index)">
 				<view class="tabitems">{{tab.name}}</view>
 			 </view>
@@ -24,7 +24,7 @@
 							</template>
 							<template v-else-if="v.type === 'threeAdv'">
 								<!-- 三图广告 -->
-								<three-adv :resdata="v.data" />
+								<three-adv :resdata="v.data"/>
 								<divider /> 
 							</template>
 							<template v-else-if="v.type === 'oneAdv'">
@@ -35,12 +35,13 @@
 							<template v-else-if="v.type === 'list'">
 								<!-- 公共列表组件 750 - 5 = 745   372.5-->
 								<view class="row j-sb">
-									<block v-for="(vlist,listindex) in v.data" :key="listindex">
-										<common-list :item="vlist" :index="listindex" />
+									<block v-for="(vlist,listindex) in v.data" :key="listindex" >
+										<view @click="listnav(vlist)">
+											<common-list :item="vlist" :index="listindex" />
+										</view>
 									</block>
 								</view>
 							</template>
-							
 						</block>
 					</template>
 					<!-- special模板 -->
@@ -149,7 +150,6 @@
 		onLoad() {
 			this.newsitems = this.randomfn()
 		},
-		
 		methods: {
 			// 加载更多
 			loadMore(e) {
@@ -312,17 +312,17 @@
 							{
 								type:"indexnavs",
 								data:[
-					{ src:"/static/images/indexnav/1.png",text:"新品发布" },
-					{ src:"/static/images/indexnav/2.gif",text:"小米众筹" },
-					{ src:"/static/images/indexnav/3.gif",text:"以旧换新" },
-					{ src:"/static/images/indexnav/4.gif",text:"一分换团" },
-					{ src:"/static/images/indexnav/5.gif",text:"超值特卖" },
-					{ src:"/static/images/indexnav/6.gif",text:"小米秒杀" },
-					{ src:"/static/images/indexnav/7.gif",text:"真心想要" },
-					{ src:"/static/images/indexnav/8.gif",text:"电视热卖" },
-					{ src:"/static/images/indexnav/9.gif",text:"家电热卖" },
-					{ src:"/static/images/indexnav/10.gif",text:"米粉卡" },
-				]
+									{ src:"/static/images/indexnav/1.png",text:"新品发布" },
+									{ src:"/static/images/indexnav/2.gif",text:"小米众筹" },
+									{ src:"/static/images/indexnav/3.gif",text:"以旧换新" },
+									{ src:"/static/images/indexnav/4.gif",text:"一分换团" },
+									{ src:"/static/images/indexnav/5.gif",text:"超值特卖" },
+									{ src:"/static/images/indexnav/6.gif",text:"小米秒杀" },
+									{ src:"/static/images/indexnav/7.gif",text:"真心想要" },
+									{ src:"/static/images/indexnav/8.gif",text:"电视热卖" },
+									{ src:"/static/images/indexnav/9.gif",text:"家电热卖" },
+									{ src:"/static/images/indexnav/10.gif",text:"米粉卡" },
+								]
 							},
 							{
 								type:"threeAdv",
@@ -397,6 +397,12 @@
 					ary.push(aryItem);
 				}
 				return ary;
+			},
+			listnav(item){
+				// console.log(item)
+				uni.navigateTo({				
+					url:`/pages/productDetails/productDetails?id=${item}`,
+				});
 			}
 		}
 	}

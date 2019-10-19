@@ -1,0 +1,80 @@
+
+.iconswp{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: row;
+	    -ms-flex-direction: row;
+	        flex-direction: row;
+	white-space: nowrap;
+}
+.iconswp-item{
+	display: inline-block;
+	width: 150rpx;
+}
+.selectPOP{
+	margin: 20rpx;
+	background-color: #f5f6f3;
+	border-radius: 20rpx;
+}
+.selectPOP-item{
+	font-size: 28rpx;
+	padding: 30rpx;
+	color: #767a7e;
+	border-bottom: 1rpx solid #F4F5F6;
+}
+.btn-num{
+	display: inline-block;
+	line-height: 100rpx;
+	width: 100rpx;
+	height: 100rpx;
+	background-color: #f8f8f8;
+}
+.add-cart{
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 140rpx;
+	background-color: #FD6801;
+	text-align: center;
+	line-height: 140rpx;
+	color: #FFFFFF;
+}
+/* 弹框显示 */
+.show{
+	display: block;
+}
+.hide{
+	display: none;
+}
+/* 评论 */
+.comment-list{
+	width: 750rpx;
+	height: 420rpx;
+	white-space: nowrap;
+}
+.comment-item{
+	width: 620rpx;
+	background-color: #F5F6F3;
+	margin: 20rpx;
+	padding: 20rpx;
+	display: inline-block;
+}
+.comment-img{
+	height: 175rpx;
+	width: 175rpx;
+	border-radius: 20rpx;
+}
+/* 底部购物篮 */
+.basket{
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 100rpx;
+}
+

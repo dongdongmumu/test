@@ -1,1 +1,1 @@
-<view class="d-flex" style="color:#FD6801;font-size:27rpx;font-style:bold;">￥<slot></slot></view>
+<view class="fs" style="{{(fsize)}}">￥<slot></slot></view>

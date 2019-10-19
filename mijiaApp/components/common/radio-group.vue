@@ -1,7 +1,7 @@
 <template>
 	<view class="btnall">
-		<view   v-for="(item,index) in label.list" :key="index">
-			<view class="btn" :class="label.selected === index ? 'btnsel':''" @click="changeRadio(index)">
+		<view   v-for="(item,index) in resdata.list" :key="index">
+			<view class="btn" :class="resdata.selected == index ? 'btnsel':''" @click="changeRadio(index)">
 				{{item.name}}
 			</view>
 		</view>
@@ -10,14 +10,19 @@
 
 <script>
 	export default {
+		data(){
+			return {
+				resdata:this.label,
+			}
+		},
 		props: {
-			label: Object
+			label: Object,
 		},
 		methods: {
 			changeRadio(index) {
-				this.label.selected = index;
-				console.log(`第${index}个选项`);
-				this.$emit('update:selected',index)
+				this.resdata.selected = index;
+				// console.log(`第${index}个选项`);
+				this.$emit('submig',index)
 			}
 		},
 	}

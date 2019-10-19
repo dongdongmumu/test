@@ -5,7 +5,8 @@
     "pages/my/my",
     "pages/cart/cart",
     "pages/search/search",
-    "pages/searchList/searchList"
+    "pages/searchList/searchList",
+    "pages/productDetails/productDetails"
   ],
   "window": {
     "navigationBarTextStyle": "black",
@@ -49,6 +50,6 @@
     "autoclose": false
   },
   "appname": "mijaiApp",
-  "compilerVersion": "2.3.3",
+  "compilerVersion": "2.3.5",
   "usingComponents": {}
 }

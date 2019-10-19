@@ -3,13 +3,13 @@
 		<card headTitle="热门搜索" :imgheight="209" bodyCover="../../static/images/demo/search-banner.png"></card>
 		<view  class="flexItem">
 			<view v-for="(value,index) in hot" :key="index" @click="clickItem(value.name)">
-				<search-btn :item="value" ></search-btn>
+				<search-btn :color="true">{{value.name}}</search-btn>
 			</view>
 		</view>
 		<card headTitle="常用分类" ></card>
 		<view class="flexItem" >
 			<view v-for="(value,index) in cate" :key="index"  @click="clickItem(value.name)">
-				<search-btn  :item="value" :color="false" ></search-btn>
+				<search-btn >{{value.name}}</search-btn>
 			</view>
 		</view>
 		<divider></divider>
@@ -36,6 +36,7 @@
 		},
 		data() {
 			return {
+				searchText:"",
 				hot:[
 					{ name:'领券中心' },
 					{ name:'Redmi K20' },
@@ -58,6 +59,25 @@
 					{name:"小强"}
 				]
 			}
+		},
+		// 监听原生标题栏搜索输入框输入内容变化事件	
+		onNavigationBarSearchInputChanged(value){
+			// console.log(value)
+			this.searchText = value;
+		},
+		// 监听原生标题栏按钮点击事件，参数为Object
+		onNavigationBarButtonTap(){
+			let text= this.searchText;
+			uni.navigateTo({
+				url:`../searchList/searchList?key=${text}`
+			})
+		},
+		// 监听原生标题栏搜索输入框搜索事件，用户点击软键盘上的“搜索”按钮时触发。
+		onNavigationBarSearchInputConfirmed(text){
+			// console.log(text);
+			uni.navigateTo({
+				url:`../searchList/searchList?key=${text}`
+			})
 		},
 		methods: {
 			clickItem(text){

@@ -1,1 +1,1 @@
-<view class="btn" style="{{(getStyle)}}">{{''+item.name+''}}</view>
+<view class="btn" style="{{(getStyle)}}"><slot></slot></view>

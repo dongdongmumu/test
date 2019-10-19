@@ -1,0 +1,1 @@
+<view><view data-event-opts="{{[['tap',[['adws',['$event']]]]]}}" class="bg-style" bindtap="__e"></view><view class="pop-box"><slot></slot></view></view>

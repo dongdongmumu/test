@@ -1,0 +1,24 @@
+{
+  "titleNView": {
+    "titleText": "详情页",
+    "type": "transparent",
+    "buttons": [
+      {
+        "fontSrc": "/static/font/iconfont.ttf",
+        "text": "",
+        "float": "right",
+        "color": "#cacaca",
+        "colorPressed": "#FD6801",
+        "fontSize": "22px"
+      }
+    ]
+  },
+  "usingComponents": {
+    "swiper": "/components/productDetail/swiper",
+    "price": "/components/common/price",
+    "icon-swiper": "/components/productDetail/icon-swiper",
+    "pop-box": "/components/productDetail/pop-box",
+    "radio-group": "/components/common/radio-group",
+    "card": "/components/common/card"
+  }
+}

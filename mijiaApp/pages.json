@@ -121,6 +121,25 @@
             	}
             }
         }
+        ,{
+            "path" : "pages/productDetails/productDetails",
+            "style" : {
+				"app-plus":{
+					"titleNView":{
+						"titleText":"详情页",
+						"type":"transparent",
+						"buttons":[{
+							"fontSrc":"/static/font/iconfont.ttf",
+							"text":"\ue6ed",
+							"float":"right",
+							"color":"#cacaca",
+							"colorPressed":"#FD6801",
+							"fontSize":"22px"
+						}]
+					}
+				}
+			}
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",

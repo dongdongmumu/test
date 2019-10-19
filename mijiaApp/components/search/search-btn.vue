@@ -1,6 +1,6 @@
 <template>
 		<view  class="btn" :style="getStyle" >
-			{{item.name}}
+			<slot></slot>
 		</view>
 </template>
 
@@ -9,7 +9,7 @@
 		props: {
 			item:Object,
 			color: {
-				default: true,
+				default: false,
 				type: Boolean
 			}
 		},

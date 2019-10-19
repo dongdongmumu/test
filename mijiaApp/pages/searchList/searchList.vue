@@ -17,17 +17,17 @@
 		</view>
 		<!-- 抽屉 -->
 		<uni-drawer :visible="showRigth" mode="right" @close="showRigth = false">
-			<card headTitle="服务" :headBorderBottom="false" :headTitleWeight="false">
-				<radio-group :label="label" :selected.sync='label.selected'></radio-group>
+			<card headTitle="服务">
+				<radio-group :label="label" @submig="addmsgA" ></radio-group>
 			</card>
-			<card headTitle="分类" :headBorderBottom="false" :headTitleWeight="false">
-				<radio-group :label="label" :selected.sync='label.selected'></radio-group>
+			<card headTitle="分类">
+				<radio-group :label="label" @submig="addmsgB"></radio-group>
 			</card>
 			<!-- 按钮 -->
 			<view class="d-flex position-fixed bottom-0 right-0 w-100 border-top border-light-secondary">
-				<view class="flex-1 main-bg-color text-white font-md py-2 text-center" hover-class="main-bg-hover-color">确定</view>
+				<view class="flex-1 main-bg-color text-white font-md py-2 text-center" hover-class="main-bg-hover-color" @click="drawerSelect">确定</view>
 				<view class="flex-1 font-md py-2 text-center"
-				hover-class="bg-light-secondary">重置</view>
+				hover-class="bg-light-secondary" @click="drawerReset">重置</view>
 			</view>
 		</uni-drawer>
 		<!-- 内容列表 -->
@@ -125,6 +125,8 @@
 					}
 				],
 				showRigth: false,
+				selectLabelA:"",
+				selectLabelB:"",
 				screen:{
 					currentIndex:0,
 					list:[
@@ -165,8 +167,23 @@
 				this.showRigth = true
 			},
 			// 按钮组件传值
-			addmsg(value){
-				console.log(value)
+			addmsgA(value){
+				console.log(value.target.__args__)	//这是选中的选项
+				let index = value.target.__args__;
+				this.selectLabelA = this.label.list[index];
+			},
+			addmsgB(value){
+				console.log(value.target.__args__)	//这是选中的选项
+				let index = value.target.__args__;
+				this.selectLabelB = this.label.list[index];
+			},
+			//侧边栏确认
+			drawerSelect(){
+				console.log(`服务第${this.selectLabelA},分类${this.selectLabelB}`)
+			},
+			//侧边栏重置
+			drawerReset(){
+				//重置》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》
 			}
 		}
 	}
